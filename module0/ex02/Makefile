@@ -1,6 +1,6 @@
-NAME 	:=	megaphone
+NAME 	:=	globalBanksters
 CXXFLAGS:=	-Wall -Wextra -Werror -std=c++98 -MMD
-SRC		:=	megaphone.cpp
+SRC		:=	Account.cpp tests.cpp
 OBJS_DIR:=	./objs/
 OBJ := $(addprefix $(OBJS_DIR),$(SRC:.cpp=.o))
 DEPS := $(OBJ:.o=.d)
@@ -48,4 +48,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all title clean fclean re
-

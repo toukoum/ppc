@@ -25,25 +25,25 @@ title:
 	@echo "$(YELLOW)==== Making $(NAME) Project ====\n$(NC)"   
 
 $(NAME): $(OBJ)
-	@echo "$(GREEN)\nCreating $(NAME)...✅$(NC)"
+	@echo "\n > Creating: $(GREEN)$(NAME)...✅$(NC)"
 	@$(CXX) $(OBJ) -o $(NAME)
-	@echo "$(CYAN)Done 🔥\n$(NC)"
-
+	@echo " >$(CYAN) Done 🔥$(NC)"
+	@echo "\n => Run the project:$(ROSE) ./$(NAME)\n$(NC)"
 
 $(OBJS_DIR)%.o: %.cpp
 	@mkdir -p $(OBJS_DIR)
-	@printf "$(ERASE)Compiling: $(CYAN)$@$(NC)$(END)"    
+	@printf "$(ERASE) > Compiling: $(CYAN)$@$(NC)$(END)"    
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS_DIR)
-	@echo "$(RED)Deleting objects files...✅$(NC)"
-	@echo "$(CYAN)Done 🔥\n$(NC)"
+	@rm -rf $(OBJS_DIR)
+	@echo " >$(RED) Deleting objects files...✅$(NC)"
+	@echo " >$(CYAN) Done 🔥\n$(NC)"
 
 fclean: clean
-	rm -rf $(NAME)
-	@echo "$(RED)Deleting $(NAME) file...✅$(NC)"
-	@echo "$(CYAN)Done 🔥\n$(NC)"
+	@rm -rf $(NAME)
+	@echo " >$(RED) Deleting $(NAME) file...✅$(NC)"
+	@echo " >$(CYAN) Done 🔥\n$(NC)"
 
 re: fclean all
 

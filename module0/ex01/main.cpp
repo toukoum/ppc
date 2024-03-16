@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:09:12 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/15 15:16:19 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/15 15:32:52 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int main()
 		else
 			std::cout << RED << "404: Command not Found." << RESET << std::endl;
 	}
-	std::cout << YELLOW << std::endl << "Bye !" << RESET << std::endlk;
+	std::cout << YELLOW << std::endl << "Bye !" << RESET << std::endl;
 	
 }
