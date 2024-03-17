@@ -16,7 +16,6 @@ ERASE	:=	\033[2K\r
 BLUE	:=	\033[34m
 END		:=	\033[0m
 
--include $(DEPS)
 
 all: title $(NAME) 
 
@@ -46,5 +45,7 @@ fclean: clean
 	@echo " >$(CYAN) Done 🔥\n$(NC)"
 
 re: fclean all
+
+-include $(DEPS)
 
 .PHONY: all title clean fclean re

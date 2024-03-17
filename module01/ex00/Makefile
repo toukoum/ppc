@@ -1,6 +1,6 @@
-NAME 	:=	globalBanksters
+NAME 	:=	zombie
 CXXFLAGS:=	-Wall -Wextra -Werror -std=c++98 -MMD
-SRC		:=	Account.cpp tests.cpp
+SRC		:=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp 
 OBJS_DIR:=	./objs/
 OBJ := $(addprefix $(OBJS_DIR),$(SRC:.cpp=.o))
 DEPS := $(OBJ:.o=.d)
@@ -16,11 +16,7 @@ ERASE	:=	\033[2K\r
 BLUE	:=	\033[34m
 END		:=	\033[0m
 
-all: title $(NAME) 
-
-title:
-	@clear
-	@echo "$(YELLOW)==== Making $(NAME) Project ====\n$(NC)"   
+all: title $(NAME)  
 
 $(NAME): $(OBJ)
 	@echo "\n > Creating: $(GREEN)$(NAME)...✅$(NC)"
@@ -45,6 +41,11 @@ fclean: clean
 
 re: fclean all
 
+title:
+	@clear
+	@echo "$(YELLOW)==== Making $(NAME) Project ====\n$(NC)"  
+
 -include $(DEPS)
 
 .PHONY: all title clean fclean re
+
