@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:09:12 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/15 15:32:52 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/18 16:33:38 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int main()
 	while (true)
 	{
 		std::cout << CYAN << std::endl << "Enter your command (ADD/SEARCH/EXIT): " << RESET;
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+			break ;
 		if (input == "ADD")
 			repertory.add_contact();
 		else if (input == "SEARCH")

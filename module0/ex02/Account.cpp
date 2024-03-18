@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 19:23:44 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/16 20:54:19 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/18 16:58:27 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,13 @@ Account::Account( int initial_deposit ){
 
 void	Account::_displayTimestamp( void )
 {
-	std::time_t tempsActuel = std::time(nullptr);
-    std::tm* tempsLocal = std::localtime(&tempsActuel);
-    std::ostringstream oss;
-    oss << std::put_time(tempsLocal, "[%Y%m%d_%H%M%S] ");
-	std::cout << oss.str();
+	 const time_t now = time(0);
+    struct tm *dt = localtime(&now);
+    char formattedDate[20];
+    strftime(formattedDate, sizeof(formattedDate), "[%Y%m%d_%H%M%S] ", dt);
+    std::cout << formattedDate;
+
+    return ;
 }
 
 Account::~Account( void ){

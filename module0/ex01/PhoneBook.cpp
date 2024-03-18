@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:15:59 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/15 15:06:16 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/18 16:43:00 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,32 @@ void PhoneBook::add_contact(){
 
 	do{
 		std::cout << "Enter your first Name: ";
-		std::getline(std::cin, name);
+		if (!std::getline(std::cin, name))
+			return ;
 	} while (!name.length());
 
 	do{
 		std::cout << "Enter your last Name: ";
-		std::getline(std::cin, lname);
+		if (!std::getline(std::cin, lname))
+			return ;
 	} while (!lname.length());
 
 	do{
 		std::cout << "Enter your nickname: ";
-		std::getline(std::cin, nname);
+		if (!std::getline(std::cin, nname))
+			return ;
 	} while (!nname.length());
 
 	do{
 		std::cout << "Enter your phone number: ";
-		std::getline(std::cin, phone);
+		if (!std::getline(std::cin, phone))
+			return ;
 	} while (!phone.length());
 
 	do{
 		std::cout << "Enter your darkest secret: ";
-		std::getline(std::cin, secret);
+		if (!std::getline(std::cin, secret))
+			return ;
 	} while (!secret.length());
 	
 	Contact newContact(name, lname, nname, phone, secret);
@@ -76,8 +81,10 @@ void PhoneBook::displayColumn(const std::string &text) const{
 }
 
 void PhoneBook::displayContact(int index) const{
-	
-	displayColumn(std::to_string(index + 1));
+	std::string str_index;
+
+	str_index = index + 49;
+	displayColumn(str_index);
 	displayColumn(_contacts[index].getFirstName());
 	displayColumn(_contacts[index].getLastName());
 	displayColumn(_contacts[index].getNickname());
@@ -91,7 +98,6 @@ void PhoneBook::displayAllContact() const{
 	displayColumn("Nickname");
 	std::cout << std::endl;
 	std::cout << std::setfill('_') << std::setw(44) << "" << std::setfill(' ') << std::endl;
-
 
 	for (int j = 0; j < _currentSize; j++){
 		displayContact(j);
@@ -120,6 +126,8 @@ void PhoneBook::search_contact(){
         std::cout << std::endl << "Enter the index of your Search: ";
         std::cin >> index;
 
+		if (std::cin.eof())
+			return ;
         if (std::cin.fail()) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');

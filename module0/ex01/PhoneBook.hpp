@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:15:56 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/15 14:56:10 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/18 13:01:28 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
+#include <limits>
 #include "Contact.hpp"
 
 const std::string RED = "\033[31m";
