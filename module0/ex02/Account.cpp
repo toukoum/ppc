@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 19:23:44 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/18 16:58:27 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/21 23:48:11 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ Account::Account( int initial_deposit ){
 
 void	Account::_displayTimestamp( void )
 {
-	 const time_t now = time(0);
+	const time_t now = time(0);
     struct tm *dt = localtime(&now);
     char formattedDate[20];
     strftime(formattedDate, sizeof(formattedDate), "[%Y%m%d_%H%M%S] ", dt);
     std::cout << formattedDate;
-
+    
     return ;
 }
 
@@ -104,7 +104,7 @@ bool	Account::makeWithdrawal( int withdrawal ){
 	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:" << withdrawal << ";amount:" << _amount - withdrawal<< ";nb_withdrawals:" << _nbWithdrawals + 1 << std::endl;
 	_amount -= withdrawal;
 	_totalAmount -= withdrawal;
-	_totalNbWithdrawals--;
+	_totalNbWithdrawals++;
 	_nbWithdrawals++;
 	return (true);
 }

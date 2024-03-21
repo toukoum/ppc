@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:39:30 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/21 16:32:15 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/21 16:09:39 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-class Karen{
+class Harl{
 private:
 	void debug( void );
 	void info( void );
@@ -23,9 +23,9 @@ private:
 	void error( void );
 
 public:
-	Karen();
-	~Karen();
-	void complain( int level );
+	Harl();
+	~Harl();
+	void complain( std::string level );
 
 };
 

@@ -6,12 +6,11 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:08:41 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/21 22:35:18 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/22 00:11:31 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
-
+#include "Harl.hpp"
 
 void setColor(const std::string& level) {
     if (level == "DEBUG")
@@ -32,7 +31,7 @@ int main(int argc, char *argv[]) {
 		return (1);
 	}
 	
-    Karen karen;
+    Harl karen;
     std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
     for (int i = 0; i < 4; i++) {

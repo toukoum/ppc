@@ -6,17 +6,26 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:15:58 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/21 15:17:46 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/21 23:58:03 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 
-int my_replace(std::ifstream& inFile, std::string s1, std::string s2, std::string nameInFile){
+int my_replace(std::string s1, std::string s2, std::string nameInFile){
+	
+	std::ifstream inFile(nameInFile.c_str());
+	if (!inFile)
+	{
+		std::cerr << "\033[31mError:\033[0m Failed to open the file '" << nameInFile << "'.\n"
+          << "Please check that the file exists, that you have permission to read it,\n"
+          << "and that the file name is correct." << std::endl;
+		return (1);	
+	}
 	
 	bool is_find = false;
-	std::ofstream outfile(nameInFile + ".replace");
+	std::ofstream outfile((nameInFile + ".replace").c_str());
 	std::string line;
 	
 	if (!outfile) {
@@ -61,16 +70,8 @@ int main(int argc, char const *argv[])
           << "Please ensure that both 's1' and 's2' are provided as non-empty arguments." << std::endl;
 		return (1);
 	}
-	
-	std::ifstream inFile(argv[1]);
-	if (!inFile)
-	{
-		std::cerr << "\033[31mError:\033[0m Failed to open the file '" << argv[1] << "'.\n"
-          << "Please check that the file exists, that you have permission to read it,\n"
-          << "and that the file name is correct." << std::endl;
-		return (1);	
-	}
-	my_replace(inFile, s1, s2, argv[1]);
+
+	my_replace(s1, s2, argv[1]);
 	
 	return 0;
 }

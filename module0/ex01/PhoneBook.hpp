@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 14:15:56 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/18 13:01:28 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/20 12:48:14 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,13 @@ public :
 	void search_contact();
 
 	std::string getName() const;
+	void clearScreen();
 
+private:
 	// Display
 	void displayAllContact() const;
 	void displayColumn(const std::string &text) const;
 	void displayContact(int index) const;
-	void clearScreen();
-
-
-private:
 	Contact _contacts[8];
 	int	_currentSize;
 };

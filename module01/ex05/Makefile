@@ -1,6 +1,6 @@
-NAME 	:=	karen
+NAME 	:=	harl
 CXXFLAGS:=	-Wall -Wextra -Werror -std=c++98 -MMD
-SRC		:=	main.cpp Karen.cpp
+SRC		:=	main.cpp Harl.cpp
 OBJS_DIR:=	./objs/
 OBJ := $(addprefix $(OBJS_DIR),$(SRC:.cpp=.o))
 DEPS := $(OBJ:.o=.d)
