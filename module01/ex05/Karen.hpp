@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 14:50:58 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/21 22:48:54 by rgiraud          ###   ########.fr       */
+/*   Created: 2024/03/21 15:39:30 by rgiraud           #+#    #+#             */
+/*   Updated: 2024/03/21 16:09:39 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef __KAREN__
+#define __KAREN__
 
-void randomChump( std::string name ){
-	Zombie zombie(name);
-	zombie.announce();
-	return ;
-}
+#include <iostream>
+
+class Karen{
+private:
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
+
+public:
+	Karen();
+	~Karen();
+	void complain( std::string level );
+
+};
+
+#endif
