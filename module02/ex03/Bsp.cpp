@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bsp.cpp                                            :+:      :+:    :+:   */
+/*   Bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:25:32 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/29 16:43:16 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/01 12:10:26 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
+#include <cmath>
 
-float sign (Point p1, Point p2, Point p3)
+float area(float x1, float y1, float x2, float y2, float x3, float y3)
 {
-    return (p1.getX() - p3.getX()) * (p2.getY() - p3.getY()) - (p2.getX() - p3.getX()) * (p1.getY() - p3.getY());
+   return std::abs((x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2)) / 2.0);
 }
 
-bool bsp( Point const a, Point const b, Point const c, Point const point){
-	float d1, d2, d3;
-    bool has_neg, has_pos;
-
-    d1 = sign(point, a, b);
-    d2 = sign(point, b, c);
-    d3 = sign(point, c, a);
-
-    has_neg = (d1 < 0) || (d2 < 0) || (d3 < 0);
-    has_pos = (d1 > 0) || (d2 > 0) || (d3 > 0);
-	return !(has_neg && has_pos);
+bool bsp(Point const a, Point const b, Point const c, Point const point){
+    float A = area(a.getX(), a.getY(), b.getX(), b.getY(), c.getX(), c.getY());
+  
+    float A1 = area(point.getX(), point.getY(), b.getX(), b.getY(), c.getX(), c.getY());
+  
+    float A2 = area(a.getX(), a.getY(), point.getX(), point.getY(), c.getX(), c.getY());
+  
+    float A3 = area(a.getX(), a.getY(), b.getX(), b.getY(), point.getX(), point.getY());
+    
+    float totalArea = A1 + A2 + A3;
+    return (totalArea == A);
 }

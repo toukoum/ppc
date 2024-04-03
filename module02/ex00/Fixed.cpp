@@ -6,14 +6,14 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 13:27:12 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/26 15:45:21 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/29 17:05:39 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
-Fixed::Fixed() : _value(0), _fractBits(8){
+Fixed::Fixed() : _value(0){
 	std::cout << "Default constructor called" << std::endl;
 }
 

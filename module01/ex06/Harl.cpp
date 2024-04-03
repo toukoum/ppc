@@ -46,20 +46,16 @@ void Harl::complain( int level ){
 	switch (level)
 	{
 	case (0):
-		for (int i = 0; i < 4; i++)	
-			(this->*complains[i])();
-		break;
+		(this->*complains[level])();
+		level++;
 	case (1):
-		for (int i = 1; i < 4; i++)
-			(this->*complains[i])();
-		break ;
+		(this->*complains[level])();
+		level++;
 	case (2):
-		for (int i = 2; i < 4; i++)
-			(this->*complains[i])();
-		break ;
+		(this->*complains[level])();
+		level++;
 	case (3):
-		for (int i = 3; i < 4; i++)
-			(this->*complains[i])();
-		break ;
+		(this->*complains[level])();
+		level++;
 	}
 }

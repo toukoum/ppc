@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:15:58 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/21 23:58:03 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/22 15:34:13 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int my_replace(std::string s1, std::string s2, std::string nameInFile){
 	bool is_find = false;
 	std::ofstream outfile((nameInFile + ".replace").c_str());
 	std::string line;
+	std::size_t found = 0;
 	
 	if (!outfile) {
         std::cerr << "\033[31mError:\033[0m Failed to create the output file '" << nameInFile << ".replace'.\n"
@@ -36,15 +37,20 @@ int my_replace(std::string s1, std::string s2, std::string nameInFile){
 	
 	while (is_find || std::getline(inFile, line))
 	{
+		if (!is_find)
+			found = line.find(s1);
+		else
+			found = line.find(s1, found + s2.length());
 		is_find = false;
-		std::size_t found = line.find(s1);
 		if (found != std::string::npos){
 			line.erase(found, s1.length());
 			line.insert(found, s2);
 			is_find = true;
 		}
-		if (!is_find)
+		else{
 			outfile << line << "\n";
+			found = 0;
+		}
 	}
 	return (0);
 }

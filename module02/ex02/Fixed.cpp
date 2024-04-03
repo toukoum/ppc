@@ -6,12 +6,13 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 13:27:12 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/27 21:10:43 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/29 17:17:52 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 // constructor / destructor
 Fixed::Fixed() : _value(0){
@@ -22,7 +23,7 @@ Fixed::Fixed( int const value) : _value(value << _fractBits){
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( float const value) : _value(std::roundf(value * (1 << _fractBits))){ // arrondir au nombre entier le plus grand pour que ce soit plus fidele de la realite
+Fixed::Fixed( float const value) : _value(roundf(value * (1 << _fractBits))){ // arrondir au nombre entier le plus grand pour que ce soit plus fidele de la realite
 	std::cout << "Float constructor called" << std::endl;
 }
 
@@ -115,6 +116,9 @@ Fixed Fixed::operator*( Fixed const &rhs ) const{
 
 Fixed Fixed::operator/( Fixed const &rhs ) const{
 	Fixed result;
+	if (!rhs._value){
+		std::cout << "Error: Division by zero" << std::endl;
+	}
 	result.setRawBits( (this->_value << _fractBits) / rhs._value );
 	return (result);	
 }

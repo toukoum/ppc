@@ -6,31 +6,48 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:16:20 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/29 16:49:04 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/01 12:17:07 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Point.hpp"
 
-int main( void ) {
-    Point a(1, 1);
+int main() {
+    Point a(0, 0);
     Point b(0, 5);
     Point c(5, 0);
 
-    // Tests supplémentaires
-    Point pointEdgeAB(0.5, 3); // Sur l'arête AB
-    Point pointEdgeBC(2.5, 2.5); // Sur l'arête BC
-    Point pointEdgeCA(3, 1); // Sur l'arête CA
-    Point pointNearA(1.1, 1); // Proche de A, à l'extérieur
-    Point pointNearB(0, 4.9); // Proche de B, à l'extérieur
-    Point pointFar(10, 10); // Loin, clairement à l'extérieur
+    // inside
+    Point pointInside(1, 1);
 
-    // Effectuer les tests
-    Point pointsToTest[] = {pointEdgeAB, pointEdgeBC, pointEdgeCA, pointNearA, pointNearB, pointFar};
+    // arrete
+    Point pointEdgeAB(0, 2.5);
+    Point pointEdgeBC(2.5, 2.5);
+    Point pointEdgeCA(2.5, 0);
 
-    for (int i = 0; i < 6; ++i) {
-        bool result = bsp(a, b, c, pointsToTest[i]);
-        std::cout << "Point (" << pointsToTest[i].getX() << "," << pointsToTest[i].getY() << ") => in triangle ABC? : " << (result ? "Yes" : "No") << std::endl;
-    }
+    // sommet
+    Point pointOnA(0, 0);
+    Point pointOnB(0, 5);
+    Point pointOnC(5, 0);
+
+    // exterieur
+    Point pointNearA(-1, -1);
+    Point pointNearB(0, 6);
+    Point pointNearC(6, 0);
+    Point pointFarOutside(10, 10);
+
+    std::cout << "Point Inside: " << bsp(a, b, c, pointInside) << std::endl;
+    std::cout << "Point Edge AB: " << bsp(a, b, c, pointEdgeAB) << std::endl;
+    std::cout << "Point Edge BC: " << bsp(a, b, c, pointEdgeBC) << std::endl;
+    std::cout << "Point Edge CA: " << bsp(a, b, c, pointEdgeCA) << std::endl;
+    std::cout << "Point On A: " << bsp(a, b, c, pointOnA) << std::endl;
+    std::cout << "Point On B: " << bsp(a, b, c, pointOnB) << std::endl;
+    std::cout << "Point On C: " << bsp(a, b, c, pointOnC) << std::endl;
+    std::cout << "Point Near A (Outside): " << bsp(a, b, c, pointNearA) << std::endl;
+    std::cout << "Point Near B (Outside): " << bsp(a, b, c, pointNearB) << std::endl;
+    std::cout << "Point Near C (Outside): " << bsp(a, b, c, pointNearC) << std::endl;
+    std::cout << "Point Far Outside: " << bsp(a, b, c, pointFarOutside) << std::endl;
+
+    return 0;
 }

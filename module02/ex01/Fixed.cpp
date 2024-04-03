@@ -6,12 +6,13 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 13:27:12 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/03/27 15:25:30 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/03/29 17:08:58 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 Fixed::Fixed() : _value(0){
 	std::cout << "Default constructor called" << std::endl;
@@ -21,7 +22,7 @@ Fixed::Fixed( int const value) : _value(value << _fractBits){
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( float const value) : _value(std::roundf(value * (1 << _fractBits))){ // arrondir au nombre entier le plus grand pour que ce soit plus fidele de la realite
+Fixed::Fixed( float const value) : _value(roundf(value * (1 << _fractBits))){ // arrondir au nombre entier le plus grand pour que ce soit plus fidele de la realite
 	std::cout << "Float constructor called" << std::endl;
 }
 
