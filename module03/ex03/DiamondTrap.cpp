@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:04:10 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/03 18:58:15 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/04 12:21:36 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs){
 
 	if (this != &rhs){
 		ScavTrap::operator=(rhs);
-		FragTrap::operator=(rhs);
-		ClapTrap::operator=(rhs);
 		this->_name = rhs._name;
 	}
 	return (*this);

@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 10:07:32 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/03 19:06:26 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/04 12:28:33 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 #include <iostream>
-
-
 
 int main() {
 	// // part1
@@ -72,33 +70,36 @@ int main() {
 		frag.beRepaired(5);
 		frag.highFivesGuys();
 	}
-	// Part 3
+	// Part 4
 	{
 		std::cout << "\n============Part 4===================\n" << std::endl;
-		// Création d'un objet DiamondTrap
 		DiamondTrap dt("DiamondBoy");
 
-		// Affichage des noms pour vérifier l'initialisation correcte
 		dt.whoAmI();
 
 		// Test des fonctions héritées de ClapTrap, FragTrap, et ScavTrap
-		dt.attack("the air"); // Doit utiliser ScavTrap::attack
+		dt.attack("enemy");
 		dt.takeDamage(30);
 		dt.beRepaired(20);
 
-		// Test de la capacité spéciale de FragTrap et ScavTrap via DiamondTrap
-		dt.highFivesGuys(); // Héritée de FragTrap
-		dt.guardGate();     // Héritée de ScavTrap
-
+		std::cout << std::endl;
+		dt.highFivesGuys(); // from FragTrap
+		dt.guardGate();     // from ScavTrap
+		
+		std::cout << std::endl;
 		DiamondTrap original("Original");
 		std::cout << "\n\n=== Testing Copy Constructor ===" << std::endl;
 		DiamondTrap copyConstructed(original);
 		copyConstructed.whoAmI();
 
 		std::cout << "\n=== Testing Assignment Operator ===" << std::endl;
-		DiamondTrap assigned = original; // Utilisation du constructeur par copie pour initialiser `assigned`
-		assigned = copyConstructed; // Test de l'opérateur d'assignation
+		DiamondTrap assigned;
+		assigned = original;
 		assigned.whoAmI();
+
+		std::cout << std::endl;
+		std::cout << std::endl;
+		
 	}
 
 

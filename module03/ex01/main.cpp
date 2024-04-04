@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 10:07:32 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/02 15:09:18 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/04 12:08:16 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 int main() {
 	// part1
 	{
+		std::cout << "\n============Part 1===================\n" << std::endl;
+
 		// constructeur par défaut
 		ClapTrap defaultTrap;
 		// constructeur avec nom
@@ -41,23 +43,22 @@ int main() {
 	}
 	// part 2
 	{
-		// Création d'une instance de ClapTrap
+		std::cout << "\n============Part 2===================\n" << std::endl;
+
 		ClapTrap clap("Clappy");
 		std::cout << "------ ClapTrap Actions ------" << std::endl;
 		clap.attack("un ennemi");
 		clap.takeDamage(5);
 		clap.beRepaired(3);
 
-		// Séparation visuelle pour les sorties console
 		std::cout << "\n===============================\n" << std::endl;
 
-		// Création d'une instance de ScavTrap
 		ScavTrap scav("Scavvy");
 		std::cout << "------ ScavTrap Actions ------" << std::endl;
-		scav.attack("un autre ennemi"); // Doit montrer ScavTrap utilisant sa propre version de attack
-		scav.takeDamage(10); // Hérité de ClapTrap, devrait fonctionner de la même manière
-		scav.beRepaired(5); // Hérité de ClapTrap, devrait fonctionner de la même manière
-		scav.guardGate(); // Fonction spécifique à ScavTrap, montre un comportement unique
+		scav.attack("un autre ennemi");
+		scav.takeDamage(10); 
+		scav.beRepaired(5); 
+		scav.guardGate(); 
 	}
 
     return 0;

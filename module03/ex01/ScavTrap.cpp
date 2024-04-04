@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 13:40:30 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/03 19:02:43 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/04 12:04:52 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,6 @@ ScavTrap & ScavTrap::operator=(const ScavTrap & rhs){
 
 	if (this != &rhs){
 		ClapTrap::operator=(rhs);
-		this->_name = rhs._name;
-		this->_hitPoint = rhs._hitPoint;
-		this->_energyPoint = rhs._energyPoint;
-		this->_attackDamage = rhs._attackDamage;
 	}
 
 	return (*this);
