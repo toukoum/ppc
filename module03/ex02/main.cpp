@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 10:07:32 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/02 15:24:10 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/04 12:15:33 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int main() {
 		std::cout << "\n===============================\n" << std::endl;
 
 		FragTrap frag("fragvy");
-		std::cout << "------ fragTrap Actions ------" << std::endl;
+		std::cout << "\n------ fragTrap Actions ------" << std::endl;
 		frag.attack("un autre ennemi");
 		frag.takeDamage(10);
 		frag.beRepaired(5);
