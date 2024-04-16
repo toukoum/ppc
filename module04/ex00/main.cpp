@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 11:28:51 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/08 12:39:37 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/12 09:55:20 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-
 int main()
 {
 	{
+		std::cout << "\n========= PART 1 =========" << std::endl;
 		const Animal* meta = new Animal();
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
@@ -33,16 +33,33 @@ int main()
 		delete(meta);
 	}
 	{
-		std::cout << std::endl;
-		std::cout << std::endl;
-		std::cout << std::endl;
+		std::cout << "\n\n========= PART 2 =========" << std::endl;
 		const WrongAnimal* meta = new WrongAnimal();
 		const WrongAnimal* i = new WrongCat();
 		std::cout << i->getType() << " " << std::endl;
-		i->makeSound(); //will output the cat sound!
+		i->makeSound();
 		meta->makeSound();
-		
 		delete(i);
 		delete(meta);
 	}
+
+	{
+		std::cout << "\n\n========= PART 3 =========" << std::endl;
+		Animal animal;
+		std::cout << animal << std::endl;
+		animal.makeSound();
+		
+		Cat cat;
+		std::cout << cat << std::endl;
+		cat.makeSound();
+		
+		Dog dog;
+		std::cout << dog << std::endl;
+		dog.makeSound();
+
+		animal = cat;
+		std::cout << animal << std::endl;
+		animal.makeSound();	
+	}
+	
 }

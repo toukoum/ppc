@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 11:51:34 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/12 09:47:11 by rgiraud          ###   ########.fr       */
+/*   Created: 2024/04/16 11:04:15 by rgiraud           #+#    #+#             */
+/*   Updated: 2024/04/16 11:30:03 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef __IMATERIASOURCE__
+#define __IMATERIASOURCE__
 
-# include <iostream>
-# include <string>
-# include "Animal.hpp"
 
-class Cat : public Animal
+#include "AMateria.hpp"
+#include <string>
+class IMateriaSource
 {
-
 	public:
-
-		Cat();
-		Cat( Cat const & src );
-		virtual ~Cat();
-
-		Cat &		operator=( Cat const & rhs );
-
-		virtual void makeSound( void ) const;
-
-	private:
-
+	virtual ~IMateriaSource() {}
+	virtual void learnMateria(AMateria* m) = 0;
+	virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
-std::ostream &			operator<<( std::ostream & o, Cat const & i );
-
-#endif /* ************************************************************* CAT_H */
+#endif

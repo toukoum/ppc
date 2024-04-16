@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 11:51:34 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/12 09:47:11 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/12 11:12:28 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 # include <iostream>
 # include <string>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
-class Cat : public Animal
+class Dog : public Animal
 {
 
 	public:
 
-		Cat();
-		Cat( Cat const & src );
-		virtual ~Cat();
+		Dog();
+		Dog( Dog const & src );
+		virtual ~Dog();
 
-		Cat &		operator=( Cat const & rhs );
+		Dog &		operator=( Dog const & rhs );
 
 		virtual void makeSound( void ) const;
 
-	private:
+		Brain & getBrain( void ) const;
 
+	private:
+		Brain *_brain;
 };
 
-std::ostream &			operator<<( std::ostream & o, Cat const & i );
+std::ostream &			operator<<( std::ostream & o, Dog const & i );
 
-#endif /* ************************************************************* CAT_H */
+#endif /* ************************************************************* DOG_H */

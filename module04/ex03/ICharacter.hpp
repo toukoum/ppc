@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 11:51:34 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/12 09:47:11 by rgiraud          ###   ########.fr       */
+/*   Created: 2024/04/15 12:21:26 by rgiraud           #+#    #+#             */
+/*   Updated: 2024/04/15 15:04:34 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef __ICHARACTER__
+#define __ICHARACTER__
 
-# include <iostream>
-# include <string>
-# include "Animal.hpp"
+class AMateria;
+#include <string>
 
-class Cat : public Animal
+class ICharacter
 {
-
 	public:
-
-		Cat();
-		Cat( Cat const & src );
-		virtual ~Cat();
-
-		Cat &		operator=( Cat const & rhs );
-
-		virtual void makeSound( void ) const;
-
-	private:
-
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
 };
 
-std::ostream &			operator<<( std::ostream & o, Cat const & i );
-
-#endif /* ************************************************************* CAT_H */
+#endif
