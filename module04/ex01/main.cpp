@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 11:28:51 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/12 16:31:21 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/16 16:26:53 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int main()
 	}
 
 	{
-		std::cout << "\n\n========= PART 3 =========" << std::endl;
+		std::cout << "\n\n========= PART 3 (deep copy)=========" << std::endl;
 		// 1- create dog
 		// 2- change idea of copy dog
 		// 3- kill the copy

@@ -1,5 +1,5 @@
 NAME 	:=	game
-CXXFLAGS:=	-Wall -Wextra -Werror -std=c++98 -MMD
+CXXFLAGS:=	-Wall -Wextra -Werror -g -std=c++98 -MMD
 SRC		:=	Cure.cpp main.cpp AMateria.cpp Character.cpp Ice.cpp MateriaSource.cpp
 OBJS_DIR:=	./objs/
 OBJ := $(addprefix $(OBJS_DIR),$(SRC:.cpp=.o))

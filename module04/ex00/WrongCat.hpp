@@ -9,7 +9,6 @@ class WrongCat : public WrongAnimal
 {
 
 	public:
-
 		WrongCat();
 		WrongCat( WrongCat const & src );
 		~WrongCat();

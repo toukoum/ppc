@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 11:28:51 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/16 12:06:15 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/16 16:45:39 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,24 @@ int main()
 		Ice *ice3 = new Ice();
 		Ice *ice2 = new Ice();
 		Cure *cure2 = new Cure();
-		//Cure *cure2 = new Cure();
-		Character me = Character("toukoum");
+		Character *me = new Character("toukoum");
 		std::cout << std::endl;
-		Character other = Character("bob");
+		Character *other = new Character("bob");
 		std::cout << std::endl;
-		me.equip(cure);
-		me.equip(ice);
-		me.equip(ice2);
-		me.equip(cure2);
-		me.unequip(3);
-		me.equip(ice3);
-		me.use(0, other);
-		me.use(1, other);
+		me->equip(cure);
+		me->equip(ice);
+		me->equip(ice2);
+		me->equip(cure2);
+		me->unequip(3);
+		me->equip(ice3);
+		me->use(0, *other);
+		me->use(1, *other);
 		std::cout << std::endl;
 		std::cout << std::endl;
 
+		delete(me);
+		delete(other);
+		delete(cure2);
 	}
 	{
 		std::cout << "\n\n========= PART 2 =========\n" << std::endl;

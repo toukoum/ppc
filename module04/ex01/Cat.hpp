@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 11:51:34 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/12 11:24:41 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/16 16:25:37 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Cat : public Animal
 
 		Cat &		operator=( Cat const & rhs );
 
-		virtual void makeSound( void ) const;
+		void makeSound( void ) const;
 
 		Brain & getBrain( void ) const;
 

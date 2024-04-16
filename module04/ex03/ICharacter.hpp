@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:21:26 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/15 15:04:34 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/16 16:53:53 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 class AMateria;
 #include <string>
+#include "AMateria.hpp"
 
 class ICharacter
 {

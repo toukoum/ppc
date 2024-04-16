@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:29:24 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/15 19:30:45 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/16 16:53:11 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ AMateria::~AMateria(){
 }
 
 AMateria & AMateria::operator=(AMateria const &rhs){
-	if (this != &rhs){
-		this->_type = rhs._type;
-	}
+	std::cout << "(AMateria) Assignation operator called !" << std::endl;
+	(void)rhs;
 	return (*this);
 }
 

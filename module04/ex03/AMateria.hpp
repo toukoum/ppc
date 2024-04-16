@@ -6,12 +6,14 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:19:37 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/15 19:23:53 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/16 16:54:53 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __AMATERIA__
 #define __AMATERIA__
+
+class ICharacter;
 
 #include <string>
 #include "ICharacter.hpp"

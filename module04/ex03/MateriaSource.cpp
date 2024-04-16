@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:46:08 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/04/16 12:02:21 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/04/16 17:09:11 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 MateriaSource::MateriaSource()
 {
 	for (int i = 0; i < 4; i++){
-		_materias[i] = nullptr;
+		_materias[i] = NULL;
 	}
 	std::cout << "(MateriaSource) Default Constructor called" << std::endl;
 }
@@ -28,9 +28,9 @@ MateriaSource::MateriaSource( const MateriaSource & src )
 {
 	for (int i = 0; i < 4; i++){
 		if (src._materias[i])
-			this->_materias[i] = src._materias[i];
+			this->_materias[i] = src._materias[i]->clone();
 		else
-			this->_materias[i] = nullptr;
+			this->_materias[i] = NULL;
 	}
 	std::cout << "(MateriaSource) Copy Constructor called" << std::endl;
 }
@@ -59,12 +59,12 @@ MateriaSource &				MateriaSource::operator=( MateriaSource const & rhs )
 {
 	for (int i = 0; i < 4; i++){
 		if (rhs._materias[i])
-			this->_materias[i] = rhs._materias[i];
+			this->_materias[i] = rhs._materias[i]->clone();
 		else
-			this->_materias[i] = nullptr;
+			this->_materias[i] = NULL;
 	}
 	std::cout << "(MateriaSource) Assignation operator called" << std::endl;
-	return *this;
+	return *this;g cl 
 }
 
 /*
@@ -72,15 +72,16 @@ MateriaSource &				MateriaSource::operator=( MateriaSource const & rhs )
 */
 
 void MateriaSource::learnMateria(AMateria* m){
-	if (m == nullptr) {
+	if (m == NULL) {
             std::cout << "Error: Null materia cannot be learned." << std::endl;
             return;
 	}
 	for (int i = 0; i < 4; i++)
 	{
-		if (_materias[i] == nullptr){
+		if (_materias[i] == NULL){
 			std::cout << "(MateriaSource) " << m->getType() << " Successfully Learned !" << std::endl;
 			_materias[i] = m->clone();
+			delete(m);
 			return ;
 		}
 	}
@@ -90,11 +91,11 @@ void MateriaSource::learnMateria(AMateria* m){
 AMateria* MateriaSource::createMateria(std::string const & type){
 	for (int i = 0; i < 4; i++)
 	{
-		if (_materias[i] != nullptr && _materias[i]->getType() == type){
+		if (_materias[i] != NULL && _materias[i]->getType() == type){
 			return (_materias[i]->clone());
 		}
 	}
-	return (nullptr);
+	return (NULL);
 }
 
 
