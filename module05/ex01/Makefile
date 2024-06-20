@@ -1,6 +1,6 @@
 NAME 	:=	bureaucrat
 CXXFLAGS:=	-Wall -Wextra -Werror -std=c++98 -MMD
-SRC		:=	Bureaucrat.cpp main.cpp
+SRC		:=	Bureaucrat.cpp main.cpp Form.cpp
 OBJS_DIR:=	./objs/
 OBJ := $(addprefix $(OBJS_DIR),$(SRC:.cpp=.o))
 DEPS := $(OBJ:.o=.d)
