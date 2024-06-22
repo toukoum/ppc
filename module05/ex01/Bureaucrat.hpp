@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 12:33:44 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/06/20 15:06:36 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/06/21 12:19:11 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ public:
 			}
 	};
 	
+
+	void printBonjour() const;
 };
 
 std::ostream & operator<<( std::ostream & o, Bureaucrat const & i);

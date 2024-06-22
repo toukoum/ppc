@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 15:01:44 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/06/20 15:02:55 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/06/22 20:26:02 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 int main() {
     try {
         Bureaucrat bob("Bob", 2);
-        Form formA("FormA", false, 1, 5);
-        Form formB("FormB", false, 3, 5);
+        Form formA("FormA", 1, 5);
+        Form formB("FormB", 3, 5);
 
         bob.signForm(formA); // Should sign successfully
         bob.signForm(formB); // Should fail to sign
