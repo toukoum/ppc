@@ -7,6 +7,8 @@
 #include <stdexcept>
 #include <cstdlib> 
 #include <time.h> 
+#include <vector>
+#include <iterator>
 
 class Span
 {
@@ -45,6 +47,9 @@ public:
 	unsigned int getN() const;
 
 	void display() const;
+	
+	std::multiset<int>::iterator prev(std::multiset<int>::iterator it) const;
+
 
 	template <typename InputIterator>
 	void addNumber(InputIterator begin, InputIterator end, size_t randMax)
