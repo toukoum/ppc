@@ -6,11 +6,12 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 12:55:31 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/06/27 13:25:14 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/06/29 17:04:01 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "display.cpp"
+#include <string>
 
 void convert_char(std::string s){
 	char c = s[0];
@@ -21,7 +22,7 @@ void convert_char(std::string s){
 }
 
 void convert_int(std::string s){
-	int i = stoi(s);
+	int i = atoi(s.c_str());
 	char c = static_cast<char>(i);
 	if (i >= 32 && i  <= 126)
 		displayChar(c);
@@ -52,7 +53,7 @@ void convert_float(std::string s){
 }
 
 void convert_double(std::string s){
-	double i = std::stod(s.c_str(), NULL);
+	double i = std::strtod(s.c_str(), NULL);
 	if (i >= 32 && i  <= 126)
 		displayChar(i);
 	else

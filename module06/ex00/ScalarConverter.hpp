@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 20:17:40 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/06/27 13:43:50 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/06/30 13:40:56 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 #include <cstdlib>
 #include <cerrno>
 #include <limits>
+#include <climits>
 #include <sstream>
 #include <iomanip>
+#include <cmath>
 
 enum TypeInput
 {
@@ -36,7 +38,6 @@ class ScalarConverter
 
 	public:
 		static void convert(const std::string& s);
-		static TypeInput getType(const std::string &s);
 
 	private:
 		ScalarConverter();

@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:15:04 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/06/27 13:08:37 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/06/30 13:44:35 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void displayDouble(double s){
 }
 
 void displayError(std::string s){
-	std::cout << "Wrong input. The input does not match any type: " << s << std::endl;
+	std::cout << "The input does not match any type: " << s << std::endl;
 }
 
 void handle_special(std::string s){

@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 13:56:00 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/06/28 23:00:52 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/07/01 13:31:57 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,16 @@ void iter(T *array, const size_t lenght, void (*function)(T &)){
 }
 
 template <typename T>
-void display(T &a){
-	std::cout << a << " ";
+void iter(T *array, const size_t lenght, void (*function)(const T &)){
+	for (size_t i = 0; i < lenght; i++)
+	{
+		function(array[i]);
+	}
 }
 
+template <typename T>
+void display(const T &a){
+	std::cout << a << " ";
+}
 
 #endif /* ******************************************************* ITER_H */

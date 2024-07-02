@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:38:15 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/06/27 13:58:31 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/06/30 13:53:03 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int main()
 	
 	std::cout << "deserialize data name: " << random2->name << std::endl;
 	std::cout << "deserialize data age: " << random2->age << std::endl;
-	
+
 	if (&random == random2) {
-    std::cout << "Serialization and deserialization successful." << std::endl;
+    std::cout << "\nSerialization and deserialization successful." << std::endl;
 	} else {
-		std::cout << "Error in serialization and deserialization." << std::endl;
+		std::cout << "\nError in serialization and deserialization." << std::endl;
 	}
 	return 0;
 }

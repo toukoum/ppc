@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 20:56:46 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/06/27 13:44:04 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/06/30 13:43:42 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ bool isDouble(const std::string &s) {
     errno = 0;
 	char *end = NULL;
 	double valued = std::strtod(s.c_str(), &end);
-	std::cout << "value double " << valued << std::endl;
 	if (*end == '\0'){
 		if ((errno == ERANGE || (valued == HUGE_VAL || valued == -HUGE_VAL))){
 			return (false);
@@ -90,9 +89,9 @@ bool isInt(const std::string &s) {
 	return (false);
 }
 
-TypeInput ScalarConverter::getType(const std::string &s) {
-    if (s == "nan" || s == "inf" || s == "+inf" || s == "-inf" ||
-        s == "nanf" || s == "inff" || s == "+inff" || s == "-inff") {
+TypeInput getType(const std::string &s) {
+    if (s == "nan" || s == "inf" || s == "+inf" || s == "-inf" || 
+	 s == "inff" || s == "+inff" || s == "-inff") {
         return SPECIAL;
     }
 
@@ -113,7 +112,7 @@ void ScalarConverter::convert(const std::string &s)
 {
 	if (s.empty())
 		return (displayError(s));
-	TypeInput typeInput = ScalarConverter::getType(s);
+	TypeInput typeInput = getType(s);
 	
 	switch (typeInput)
 	{
