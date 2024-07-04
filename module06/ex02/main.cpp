@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:04:08 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/06/27 14:35:04 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/06/30 14:07:47 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
-
 class Base
 {
 public:
@@ -33,7 +32,6 @@ class C : public Base
 
 Base *generate(void)
 {
-	std::srand(std::time(0));
 
 	int randomValue = std::rand() % 3;
 	switch (randomValue)
@@ -78,7 +76,7 @@ void identify(Base &p)
 		std::cout << "p refer to a A class (" << &a << ")" << std::endl;
 		return;
 	}
-	catch (const std::bad_cast &e)
+	catch (const std::exception &e)
 	{
 	}
 	try
@@ -87,7 +85,7 @@ void identify(Base &p)
 		std::cout << "p refer to a B class (" << &b << ")" << std::endl;
 		return;
 	}
-	catch (const std::bad_cast &e)
+	catch (const std::exception &e)
 	{
 	}
 	try
@@ -96,13 +94,15 @@ void identify(Base &p)
 		std::cout << "p refer to a C class (" << &c << ")" << std::endl;
 		return;
 	}
-	catch (const std::bad_cast &e)
+	catch (const std::exception &e)
 	{
 	}
 }
 
 int main(void)
 {
+	std::srand(std::time(0));
+
 	Base *a = generate();
 	Base *b = generate();
 	Base *c = generate();

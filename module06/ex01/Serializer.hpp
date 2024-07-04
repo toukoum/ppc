@@ -4,7 +4,7 @@
 # include <iostream>
 # include <string>
 # include "dataStructure.cpp"
-
+#include <stdint.h>
 class Serializer
 {
 

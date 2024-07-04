@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 11:57:41 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/06/30 12:19:57 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/07/02 12:12:45 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,8 @@
 
 template <typename T>
 typename T::const_iterator easyFind(const T& container, int value){
-	
-	if (std::find(container.begin(), container.end(), value) != container.end())
-		return (it);
-	else
-		return container.end();
-	
+	return (find(container.begin(), container.end(), value));
 }
+
 
 #endif /* ******************************************************** EASYFIND_H */

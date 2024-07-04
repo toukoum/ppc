@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 11:50:56 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/07/02 11:01:49 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/07/02 13:00:13 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 int main()
 {
 	{
+		std::cout << "-------- TEST 1 (My Stack) --------" << std::endl;
 		MutantStack<int> mstack;
 		mstack.push(5);
 		mstack.push(17);
@@ -42,7 +43,7 @@ int main()
 		std::stack<int> s(mstack);
 	}
 	{
-		std::cout << std::endl;
+		std::cout << "---------- Test 2 (List) ----------" << std::endl;
 		std::cout << std::endl;
 		std::list<int> mstack;
 		mstack.push_back(5);
@@ -65,6 +66,38 @@ int main()
 			++it;
 		}
 		std::list<int> s(mstack);
-		return 0;
 	}
+	{
+		std::cout << "---------- Test 3 (String) ----------" << std::endl;
+		MutantStack<std::string> mstack;
+
+		mstack.push("Hello");
+		mstack.push("World");
+		mstack.push("!");
+
+		MutantStack<std::string>::iterator it = mstack.begin();
+		MutantStack<std::string>::iterator ite = mstack.end();
+		while (it != ite)
+		{
+			std::cout << *it << std::endl;
+			++it;
+		}
+
+		std::cout << std::endl;
+		std::cout << "Does my stack empty ? " << std::endl;
+		std::cout << mstack.empty() << std::endl;
+
+		std::cout << "What is the size of my stack ? " << std::endl;
+		std::cout << mstack.size() << std::endl;
+
+		std::cout << "What is the top of my stack ? " << std::endl;
+		std::cout << mstack.top() << std::endl;
+
+		std::cout << "Pop the top of my stack" << std::endl;
+		mstack.pop();
+
+		
+	}
+
+	return (0);
 }
