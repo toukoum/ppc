@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:43:09 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/07/04 10:05:35 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/07/09 14:07:22 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <fstream> // read from file
 #include <sstream> // std::stringstream
 #include <iomanip>
+#include <cstdlib>
 #include <ctime>
 
 

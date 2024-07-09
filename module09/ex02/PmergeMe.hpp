@@ -5,7 +5,11 @@
 #include <string>
 #include <vector>
 #include <list>
-#include <chrono>
+#include <sys/time.h>
+#include <cstdlib>
+#include <cerrno>
+#include <climits>
+#include <limits>
 
 class PmergeMe
 {
@@ -39,8 +43,8 @@ private:
 
 	std::vector<int> _vector;
 	std::list<int> _list;
-	long long _timeVector;
-	long long _timeList;
+	long _timeVector;
+	long _timeList;
 	
 	std::list<int>::iterator myNext(std::list<int>::iterator it, int distance);
 	std::list<int>::const_iterator myNext(std::list<int>::const_iterator it, int distance) const;

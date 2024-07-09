@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 10:52:26 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/07/08 21:30:50 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/07/09 14:23:02 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,13 +206,10 @@ int PmergeMe::dichotomie(std::vector<int>& leaders, int value){
 
 void PmergeMe::sortVector()
 {
-	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+   struct timeval start, end;
+   gettimeofday(&start, NULL);
 
 
-
-
-	// 1 creer les follower et les leader (pair)
-	
 	std::vector<int> followers;
 	std::vector<int> leaders;
 	
@@ -249,8 +246,11 @@ void PmergeMe::sortVector()
 	
 	
 	_vector = leaders;
-	std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-	_timeVector = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
+	
+    gettimeofday(&end, NULL);
+    long seconds = end.tv_sec - start.tv_sec;
+    _timeVector = (seconds * 1000000) + end.tv_usec - start.tv_usec;
+
 }
 
 
@@ -353,9 +353,11 @@ int PmergeMe::dichotomieList(std::list<int>& leaders, int value) {
 }
 
 void PmergeMe::sortList() {
-    std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+		
+	struct timeval start, end;
+   gettimeofday(&start, NULL);
 
-    // 1 creer les follower et les leader (pair)
+	
     std::list<int> followers;
     std::list<int> leaders;
 
@@ -394,8 +396,9 @@ void PmergeMe::sortList() {
 
     _list = leaders;
 
-    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-    _timeList = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
+	gettimeofday(&end, NULL);
+    long seconds = end.tv_sec - start.tv_sec;
+    _timeList = (seconds * 1000000) + end.tv_usec - start.tv_usec;
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:43:14 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/07/03 15:46:42 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/07/09 14:06:40 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void BitcoinExchange::loadDataBase(const std::string file_db)
 	std::string date;
 	std::string srate;
 	float rate;
-	std::ifstream file(file_db);
+	std::ifstream file(file_db.c_str());
 
 	if (!file.is_open())
 		throw ErrorDataBaseFile();
@@ -86,7 +86,7 @@ void BitcoinExchange::display_db()
 
 void BitcoinExchange::convert(const std::string &input_file)
 {
-	std::ifstream file(input_file);
+	std::ifstream file(input_file.c_str());
 	std::string line;
 
 	if (!file.is_open())
@@ -125,9 +125,9 @@ bool BitcoinExchange::is_valid_date(std::string date) {
 		if (!std::isdigit(month_str[i]) || !std::isdigit(day_str[i]))
 			return (false);
 	
-    int year = std::stoi(year_str);
-    int month = std::stoi(month_str);
-    int day = std::stoi(day_str);
+   int year = std::strtol(year_str.c_str(), NULL, 10);
+	int month = std::strtol(month_str.c_str(), NULL, 10);
+	int day = std::strtol(day_str.c_str(), NULL, 10);
 
     if (month < 1 || month > 12) return false;
 
@@ -137,7 +137,7 @@ bool BitcoinExchange::is_valid_date(std::string date) {
 
     if (day < 1 || day > days_in_month[month - 1]) return false;
 
-	std::time_t t = std::time(nullptr);
+	std::time_t t = std::time(NULL);
     std::tm* now = std::localtime(&t);
     int current_year = now->tm_year + 1900;
     int current_month = now->tm_mon + 1;

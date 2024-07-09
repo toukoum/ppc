@@ -6,7 +6,7 @@
 /*   By: rgiraud <rgiraud@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 10:07:08 by rgiraud           #+#    #+#             */
-/*   Updated: 2024/07/04 11:53:32 by rgiraud          ###   ########.fr       */
+/*   Updated: 2024/07/09 14:07:17 by rgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <string>
 #include <stack>
 #include <sstream>
-
 
 class RPN
 {
